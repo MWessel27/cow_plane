@@ -8,14 +8,24 @@
 
 import UIKit
 import CoreData
+import os.log
+
+struct Bobbles: Decodable {
+    let id: Int
+    let probability: String
+    let name: String
+    let imageName: String
+    let description: String
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var bobbleUniverse = [Bobble]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadData()
         return true
     }
 
@@ -34,7 +44,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
+    func preloadData() {
+        if let bobbleUniverseData = self.loadBobbleUniverseJson() {
+            self.parse(jsonData: bobbleUniverseData)
+        }
+    }
+    
+    func loadBobbleUniverseJson() -> Data? {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: "bobbleUniverse",
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
+    }
+    
+    private func saveBobbles() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(bobbleUniverse, toFile: Bobble.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Bobbles successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func parse(jsonData: Data) {
+        let preloadedDataKey = "didPreloadData"
+        let userDefaults = UserDefaults.standard
+        
+        if userDefaults.bool(forKey: preloadedDataKey) == false {
+            do {
+                
+                let backgroundContext = persistentContainer.newBackgroundContext()
+                let bobbles = try JSONDecoder().decode([Bobbles].self, from: jsonData)
+                backgroundContext.perform {
+                    for bobble in bobbles {
+                        print("id: ", bobble.id)
+                        print("name: ", bobble.name)
+                        print("probability: ", bobble.probability)
+                        print("imageName: ", bobble.imageName)
+                        print("description: ", bobble.description)
+                        print("===================================")
+                        let newBobble = Bobble(id: bobble.id, probability: bobble.probability, image: bobble.imageName, name: bobble.name, number: 1, outOf: 500, bobbleDescription: bobble.description)
+                        self.bobbleUniverse.append(newBobble!)
+                    }
+                    self.saveBobbles()
+                }
+                userDefaults.set(true, forKey: preloadedDataKey)
+                print(bobbles)
+            } catch {
+                print("decode error")
+            }
+        }
+    }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

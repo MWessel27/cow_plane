@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B17A6BC24E8BF1300C1450C /* bobbleUniverse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */; };
+		7B17A6BE24EABB8200C1450C /* myBobbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17A6BD24EABB8200C1450C /* myBobbles.swift */; };
 		7B382D5B24E55BE6009B98E2 /* BobbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */; };
 		7B382D5D24E55E42009B98E2 /* bobble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B382D5C24E55E42009B98E2 /* bobble.swift */; };
 		7BD1D3DF24E54A1900D78348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bobbleUniverse.json; path = bobble/bobbleUniverse.json; sourceTree = "<group>"; };
+		7B17A6BD24EABB8200C1450C /* myBobbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myBobbles.swift; sourceTree = "<group>"; };
 		7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleTableViewCell.swift; sourceTree = "<group>"; };
 		7B382D5C24E55E42009B98E2 /* bobble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bobble.swift; sourceTree = "<group>"; };
 		7BD1D3DB24E54A1900D78348 /* bobble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bobble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +56,7 @@
 		7BD1D3D224E54A1900D78348 = {
 			isa = PBXGroup;
 			children = (
+				7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */,
 				7BD1D3DD24E54A1900D78348 /* bobble */,
 				7BD1D3DC24E54A1900D78348 /* Products */,
 			);
@@ -73,6 +78,7 @@
 				7BD1D3E224E54A1900D78348 /* BobbleViewController.swift */,
 				7BD1D3E424E54A1900D78348 /* BobblePullViewController.swift */,
 				7B382D5C24E55E42009B98E2 /* bobble.swift */,
+				7B17A6BD24EABB8200C1450C /* myBobbles.swift */,
 				7BD1D3F724E54A9600D78348 /* BobbleShareViewController.swift */,
 				7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */,
 				7BD1D3E624E54A1900D78348 /* Main.storyboard */,
@@ -145,6 +151,7 @@
 			files = (
 				7BD1D3F024E54A1B00D78348 /* LaunchScreen.storyboard in Resources */,
 				7BD1D3ED24E54A1B00D78348 /* Assets.xcassets in Resources */,
+				7B17A6BC24E8BF1300C1450C /* bobbleUniverse.json in Resources */,
 				7BD1D3E824E54A1900D78348 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD1D3E524E54A1900D78348 /* BobblePullViewController.swift in Sources */,
+				7B17A6BE24EABB8200C1450C /* myBobbles.swift in Sources */,
 				7BD1D3F824E54A9600D78348 /* BobbleShareViewController.swift in Sources */,
 				7BD1D3FA24E54D2E00D78348 /* BobbleDetailViewController.swift in Sources */,
 				7BD1D3EB24E54A1900D78348 /* bobble.xcdatamodeld in Sources */,

@@ -70,7 +70,7 @@
                                                 <constraint firstItem="JQy-sK-pYF" firstAttribute="top" secondItem="Arp-AY-f2n" secondAttribute="topMargin" id="RRk-ZB-z2b"/>
                                                 <constraint firstAttribute="trailing" secondItem="qhi-CZ-YYY" secondAttribute="trailing" constant="20" id="UmF-8Y-YyP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="JQy-sK-pYF" secondAttribute="bottom" constant="41" id="XPs-js-9Yo"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dyi-T6-8NU" secondAttribute="trailing" constant="251" id="bjL-xo-Oc7"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dyi-T6-8NU" secondAttribute="trailing" constant="251" id="bjL-xo-Oc7"/>
                                                 <constraint firstAttribute="bottom" secondItem="qhi-CZ-YYY" secondAttribute="bottom" constant="53" id="dPM-tk-8d1"/>
                                                 <constraint firstAttribute="bottom" secondItem="aCv-Ar-JjY" secondAttribute="bottom" constant="53" id="g9M-Xt-9Zh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Caa-30-VzY" secondAttribute="bottom" id="gp8-aE-fk8"/>
@@ -230,7 +230,7 @@
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" secondItem="63c-Wn-EhD" secondAttribute="trailing" constant="57" id="cbT-o8-JHr"/>
                             <constraint firstItem="NZa-s2-Cz1" firstAttribute="leading" secondItem="caR-Y2-Rja" secondAttribute="leading" constant="174" id="duI-cz-4So"/>
                             <constraint firstItem="Om5-lT-8Zl" firstAttribute="leading" secondItem="IEb-ZX-Tza" secondAttribute="trailing" constant="8" id="jgQ-F8-mGk"/>
-                            <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" secondItem="NZa-s2-Cz1" secondAttribute="trailing" constant="173" id="kqO-HB-RpR"/>
+                            <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="NZa-s2-Cz1" secondAttribute="trailing" constant="173" id="kqO-HB-RpR"/>
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="bottom" secondItem="Om5-lT-8Zl" secondAttribute="bottom" constant="374" id="mD4-Sl-W0U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="caR-Y2-Rja"/>

@@ -10,6 +10,8 @@ import UIKit
 import os.log
 
 class Bobble: NSObject, NSCoding {
+    var id: Int
+    var probability: String
     var image: String
     var name: String
     var number: Int
@@ -21,6 +23,8 @@ class Bobble: NSObject, NSCoding {
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bobbles")
     
     struct PropertyKey {
+        static let id = "id"
+        static let probability = "probability"
         static let image = "image"
         static let name = "name"
         static let number = "number"
@@ -28,7 +32,11 @@ class Bobble: NSObject, NSCoding {
         static let bobbleDescription = "bobbleDescription"
     }
     
-    init?(image: String, name: String, number: Int, outOf: Int, bobbleDescription: String) {
+    init?(id: Int, probability: String, image: String, name: String, number: Int, outOf: Int, bobbleDescription: String) {
+        guard !probability.isEmpty else {
+            return nil
+        }
+        
         guard !image.isEmpty else {
             return nil
         }
@@ -45,6 +53,12 @@ class Bobble: NSObject, NSCoding {
             return nil
         }
         
+        if(id == 0) {
+            return nil
+        }
+        
+        self.id = id
+        self.probability = probability
         self.image = image
         self.name = name
         self.number = number
@@ -53,6 +67,8 @@ class Bobble: NSObject, NSCoding {
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: PropertyKey.id)
+        aCoder.encode(probability, forKey: PropertyKey.probability)
         aCoder.encode(image, forKey: PropertyKey.image)
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(number, forKey: PropertyKey.number)
@@ -61,6 +77,16 @@ class Bobble: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
+        guard let id = aDecoder.decodeInteger(forKey: PropertyKey.id) as? Int else {
+            os_log("Unable to decode the id for a Bobble object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        guard let probability = aDecoder.decodeObject(forKey: PropertyKey.probability) as? String else {
+            os_log("Unable to decode the probability for a Bobble object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
         guard let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? String else {
             os_log("Unable to decode the image for a Bobble object.", log: OSLog.default, type: .debug)
             return nil
@@ -86,6 +112,6 @@ class Bobble: NSObject, NSCoding {
             return nil
         }
         
-        self.init(image: image, name: name, number: number, outOf: outOf, bobbleDescription: bobbleDescription)
+        self.init(id: id, probability: probability, image: image, name: name, number: number, outOf: outOf, bobbleDescription: bobbleDescription)
     }
 }

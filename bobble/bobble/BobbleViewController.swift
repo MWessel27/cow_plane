@@ -16,6 +16,7 @@ class BobbleViewController: UIViewController, viewBobble {
     
     @IBOutlet var bobbleTableView: UITableView!
     var bobbles = [Bobble]()
+    var myWonBobbles = [myBobbles]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,23 @@ class BobbleViewController: UIViewController, viewBobble {
             bobbles += savedBobbles
         }
         
+        if let wonBobbles = loadMyBobbles() {
+            myWonBobbles += wonBobbles
+        }
+        
         self.bobbleTableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        bobbles = []
+        myWonBobbles = []
         if let savedBobbles = loadBobbles() {
             bobbles += savedBobbles
+        }
+        
+        if let wonBobbles = loadMyBobbles() {
+            myWonBobbles += wonBobbles
         }
         
         self.bobbleTableView.reloadData()
@@ -43,6 +53,10 @@ class BobbleViewController: UIViewController, viewBobble {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Bobble.ArchiveURL.path) as? [Bobble]
     }
     
+    private func loadMyBobbles() -> [myBobbles]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: myBobbles.ArchiveURL.path) as? [myBobbles]
+    }
+    
     func viewBobble(bobble: Bobble) {
         return
     }
@@ -50,7 +64,7 @@ class BobbleViewController: UIViewController, viewBobble {
 
 extension BobbleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bobbles.count
+        return myWonBobbles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,12 +74,21 @@ extension BobbleViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("The dequeued cell is not an instance of BobbleTableViewCell.")
         }
         
-        let bobble = bobbles[indexPath.row]
+        let wonBobble = myWonBobbles[indexPath.row]
         
-        cell.bobbleImageView.image = UIImage(named: bobble.image)
-        cell.bobbleNameLabel.text = bobble.name
-        cell.bobbleRarityLabel.text = String(bobble.number)
-        cell.bobbleRarityOutOfLabel.text = String(bobble.outOf)
+        for bob in bobbles {
+            if(bob.id == wonBobble.id) {
+                cell.bobbleImageView.image = UIImage(named: bob.image)
+                cell.bobbleNameLabel.text = bob.name
+                cell.bobbleRarityLabel.text = String(bob.number)
+                cell.bobbleRarityOutOfLabel.text = String(bob.outOf)
+            }
+        }
+        
+//        cell.bobbleImageView.image = UIImage(named: bobble.image)
+//        cell.bobbleNameLabel.text = bobble.name
+//        cell.bobbleRarityLabel.text = String(bobble.number)
+//        cell.bobbleRarityOutOfLabel.text = String(bobble.outOf)
         
         return cell
     }
@@ -80,11 +103,17 @@ extension BobbleViewController: UITableViewDelegate, UITableViewDataSource {
             
             bobbleDetailVC.delegate = self
 
-            let selectedBobble = bobbles[indexPath.row]
+            let wonBobble = myWonBobbles[indexPath.row]
+            var selectedBobble: Bobble?
+            for bob in bobbles {
+                if(bob.id == wonBobble.id) {
+                    selectedBobble = bob
+                }
+            }
             bobbleDetailVC.bobble = selectedBobble
               
-              // present the view controller modally without animation
-              self.present(bobbleDetailVC, animated: false, completion: nil)
+          // present the view controller modally without animation
+          self.present(bobbleDetailVC, animated: false, completion: nil)
     }
 }
 

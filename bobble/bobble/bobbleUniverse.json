@@ -1,0 +1,51 @@
+[
+      {
+         "id":1,
+         "probability":".common",
+         "name":"boxxy",
+         "imageName":"boxxyBobbleImage",
+         "description":"The epic legend of boxxy the magical box…"
+      },
+      {
+         "id":2,
+         "probability":".common",
+         "name":"crabble",
+         "imageName":"crabbleBobbleImage",
+         "description":"looks like a crab"
+      },
+      {
+         "id":3,
+         "probability":".ultra",
+         "name":"The Golden Nacho",
+         "imageName":"theGoldenNachoBobbleImage",
+         "description":"looks like a golden nacho"
+      },
+      {
+         "id":4,
+         "probability":".rare",
+         "name":"HexaHive",
+         "imageName":"hexaHiveBobbleImage",
+         "description":"looks like a honeybee-hive"
+      },
+      {
+         "id":5,
+         "probability":".moderate",
+         "name":"banana",
+         "imageName":"bananaBobbleImage",
+         "description":"looks like… well… a banana"
+      },
+      {
+         "id":6,
+         "probability":".average",
+         "name":"GlipGump",
+         "imageName":"glipGumpBobbleImage",
+         "description":"looks like a purple blob of yogurt"
+      },
+      {
+         "id":7,
+         "probability":".average",
+         "name":"pencil",
+         "imageName":"pencilBobbleImage",
+         "description":"looks like… well… a pencil"
+      }
+]
