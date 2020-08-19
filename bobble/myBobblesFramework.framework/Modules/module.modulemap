@@ -1,0 +1,11 @@
+framework module myBobblesFramework {
+  umbrella header "myBobblesFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module myBobblesFramework.Swift {
+    header "myBobblesFramework-Swift.h"
+    requires objc
+}

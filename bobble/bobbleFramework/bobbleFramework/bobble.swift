@@ -1,26 +1,29 @@
 //
 //  bobble.swift
-//  bobble
+//  bobbleFramework
 //
-//  Created by Mikalangelo Wessel on 8/13/20.
+//  Created by Mikalangelo Wessel on 8/19/20.
 //  Copyright © 2020 Mikalangelo Wessel. All rights reserved.
 //
+
+import Foundation
 
 import UIKit
 import os.log
 
-class Bobble: NSObject, NSCoding {
-    var id: Int
-    var probability: String
-    var image: String
-    var name: String
-    var number: Int
-    var outOf: Int
-    var bobbleDescription: String
+public class Bobble: NSObject, NSCoding {
+    public var id: Int
+    public var probability: String
+    public var image: String
+    public var name: String
+    public var number: Int
+    public var outOf: Int
+    public var bobbleDescription: String
     
     //MARK: Archiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bobbles")
+//    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+//    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("bobbles")
+//    let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobbles")
     
     struct PropertyKey {
         static let id = "id"
@@ -32,7 +35,7 @@ class Bobble: NSObject, NSCoding {
         static let bobbleDescription = "bobbleDescription"
     }
     
-    init?(id: Int, probability: String, image: String, name: String, number: Int, outOf: Int, bobbleDescription: String) {
+    public init?(id: Int, probability: String, image: String, name: String, number: Int, outOf: Int, bobbleDescription: String) {
         guard !probability.isEmpty else {
             return nil
         }
@@ -66,7 +69,7 @@ class Bobble: NSObject, NSCoding {
         self.bobbleDescription = bobbleDescription
     }
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: PropertyKey.id)
         aCoder.encode(probability, forKey: PropertyKey.probability)
         aCoder.encode(image, forKey: PropertyKey.image)
@@ -76,7 +79,7 @@ class Bobble: NSObject, NSCoding {
         aCoder.encode(bobbleDescription, forKey: PropertyKey.bobbleDescription)
     }
     
-    required convenience init?(coder aDecoder: NSCoder) {
+    required convenience public init?(coder aDecoder: NSCoder) {
         guard let id = aDecoder.decodeInteger(forKey: PropertyKey.id) as? Int else {
             os_log("Unable to decode the id for a Bobble object.", log: OSLog.default, type: .debug)
             return nil

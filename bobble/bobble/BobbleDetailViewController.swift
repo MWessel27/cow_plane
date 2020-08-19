@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import bobbleFramework
 
 class BobbleDetailViewController: UIViewController {
 

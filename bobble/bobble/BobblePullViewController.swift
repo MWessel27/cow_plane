@@ -8,6 +8,8 @@
 
 import UIKit
 import os.log
+import bobbleFramework
+import myBobblesFramework
 
 class BobblePullViewController: UIViewController {
     
@@ -45,15 +47,18 @@ class BobblePullViewController: UIViewController {
     }
     
     private func loadBobbles() -> [Bobble]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Bobble.ArchiveURL.path) as? [Bobble]
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [Bobble]
     }
     
     private func loadMyBobbles() -> [myBobbles]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: myBobbles.ArchiveURL.path) as? [myBobbles]
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
     }
 
     private func saveMyBobbles() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(myWonBobbles, toFile: myBobbles.ArchiveURL.path)
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(myWonBobbles, toFile: ArchiveURL!.path)
         if isSuccessfulSave {
             os_log("Bobbles successfully saved.", log: OSLog.default, type: .debug)
         } else {

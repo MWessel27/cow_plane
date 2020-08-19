@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import bobbleFramework
+import myBobblesFramework
 
 protocol viewBobble {
     func viewBobble(bobble: Bobble)
@@ -50,11 +52,13 @@ class BobbleViewController: UIViewController, viewBobble {
     }
     
     private func loadBobbles() -> [Bobble]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Bobble.ArchiveURL.path) as? [Bobble]
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [Bobble]
     }
     
     private func loadMyBobbles() -> [myBobbles]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: myBobbles.ArchiveURL.path) as? [myBobbles]
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
     }
     
     func viewBobble(bobble: Bobble) {

@@ -8,9 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		7B17A6BC24E8BF1300C1450C /* bobbleUniverse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */; };
-		7B17A6BE24EABB8200C1450C /* myBobbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B17A6BD24EABB8200C1450C /* myBobbles.swift */; };
 		7B382D5B24E55BE6009B98E2 /* BobbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */; };
-		7B382D5D24E55E42009B98E2 /* bobble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B382D5C24E55E42009B98E2 /* bobble.swift */; };
+		7B8BD8ED24EB810000BFED69 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8BD8EC24EB810000BFED69 /* Messages.framework */; };
+		7B8BD8F024EB810000BFED69 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD8EF24EB810000BFED69 /* MessagesViewController.swift */; };
+		7B8BD8F324EB810000BFED69 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B8BD8F124EB810000BFED69 /* MainInterface.storyboard */; };
+		7B8BD8F524EB810300BFED69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B8BD8F424EB810300BFED69 /* Assets.xcassets */; };
+		7B8BD8F924EB810300BFED69 /* bobbleiMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B8BD8EA24EB810000BFED69 /* bobbleiMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7BBEEAB724ED5528007433A1 /* bobbleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */; };
+		7BBEEAB824ED5528007433A1 /* bobbleFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BBEEAB924ED5531007433A1 /* bobbleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */; };
+		7BBEEABA24ED5531007433A1 /* bobbleFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BBEEAE324ED58CA007433A1 /* myBobblesFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */; };
+		7BBEEAE424ED58CA007433A1 /* myBobblesFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BBEEAE524ED58D2007433A1 /* myBobblesFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */; };
+		7BBEEAE624ED58D2007433A1 /* myBobblesFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BBEEAE824ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */; };
+		7BBEEAE924ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */; };
+		7BBEEAEA24ED5C9C007433A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1D3EC24E54A1B00D78348 /* Assets.xcassets */; };
 		7BD1D3DF24E54A1900D78348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */; };
 		7BD1D3E124E54A1900D78348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */; };
 		7BD1D3E324E54A1900D78348 /* BobbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E224E54A1900D78348 /* BobbleViewController.swift */; };
@@ -23,11 +37,68 @@
 		7BD1D3FA24E54D2E00D78348 /* BobbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7B8BD8F724EB810300BFED69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BD1D3D324E54A1900D78348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B8BD8E924EB810000BFED69;
+			remoteInfo = bobbleiMessageExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7B8BD8FA24EB810300BFED69 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7B8BD8F924EB810300BFED69 /* bobbleiMessageExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BBEEA9C24ED52C0007433A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7BBEEAB824ED5528007433A1 /* bobbleFramework.framework in Embed Frameworks */,
+				7BBEEAE624ED58D2007433A1 /* myBobblesFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BBEEA9F24ED52C9007433A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7BBEEABA24ED5531007433A1 /* bobbleFramework.framework in Embed Frameworks */,
+				7BBEEAE424ED58CA007433A1 /* myBobblesFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bobbleUniverse.json; path = bobble/bobbleUniverse.json; sourceTree = "<group>"; };
-		7B17A6BD24EABB8200C1450C /* myBobbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myBobbles.swift; sourceTree = "<group>"; };
 		7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleTableViewCell.swift; sourceTree = "<group>"; };
-		7B382D5C24E55E42009B98E2 /* bobble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bobble.swift; sourceTree = "<group>"; };
+		7B8BD8EA24EB810000BFED69 /* bobbleiMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bobbleiMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8BD8EC24EB810000BFED69 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		7B8BD8EF24EB810000BFED69 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		7B8BD8F224EB810000BFED69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7B8BD8F424EB810300BFED69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B8BD8F624EB810300BFED69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B8BD8FE24EB834B00BFED69 /* bobble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bobble.entitlements; sourceTree = "<group>"; };
+		7B8BD8FF24EB845200BFED69 /* bobbleiMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bobbleiMessageExtension.entitlements; sourceTree = "<group>"; };
+		7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleFramework.framework; sourceTree = "<group>"; };
+		7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myBobblesFramework.framework; sourceTree = "<group>"; };
+		7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleTableViewCellSmall.swift; sourceTree = "<group>"; };
 		7BD1D3DB24E54A1900D78348 /* bobble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bobble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,21 +114,58 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7B8BD8E724EB810000BFED69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BBEEAE324ED58CA007433A1 /* myBobblesFramework.framework in Frameworks */,
+				7B8BD8ED24EB810000BFED69 /* Messages.framework in Frameworks */,
+				7BBEEAB924ED5531007433A1 /* bobbleFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7BD1D3D824E54A1900D78348 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBEEAB724ED5528007433A1 /* bobbleFramework.framework in Frameworks */,
+				7BBEEAE524ED58D2007433A1 /* myBobblesFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B8BD8EB24EB810000BFED69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B8BD8EC24EB810000BFED69 /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B8BD8EE24EB810000BFED69 /* bobbleiMessageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7B8BD8FF24EB845200BFED69 /* bobbleiMessageExtension.entitlements */,
+				7B8BD8EF24EB810000BFED69 /* MessagesViewController.swift */,
+				7B8BD8F124EB810000BFED69 /* MainInterface.storyboard */,
+				7B8BD8F424EB810300BFED69 /* Assets.xcassets */,
+				7B8BD8F624EB810300BFED69 /* Info.plist */,
+				7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */,
+			);
+			path = bobbleiMessageExtension;
+			sourceTree = "<group>";
+		};
 		7BD1D3D224E54A1900D78348 = {
 			isa = PBXGroup;
 			children = (
 				7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */,
+				7BBEEAE024ED58C3007433A1 /* myBobblesFramework.framework */,
+				7BBEEAB424ED5522007433A1 /* bobbleFramework.framework */,
 				7BD1D3DD24E54A1900D78348 /* bobble */,
+				7B8BD8EE24EB810000BFED69 /* bobbleiMessageExtension */,
+				7B8BD8EB24EB810000BFED69 /* Frameworks */,
 				7BD1D3DC24E54A1900D78348 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				7BD1D3DB24E54A1900D78348 /* bobble.app */,
+				7B8BD8EA24EB810000BFED69 /* bobbleiMessageExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,12 +182,11 @@
 		7BD1D3DD24E54A1900D78348 /* bobble */ = {
 			isa = PBXGroup;
 			children = (
+				7B8BD8FE24EB834B00BFED69 /* bobble.entitlements */,
 				7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */,
 				7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */,
 				7BD1D3E224E54A1900D78348 /* BobbleViewController.swift */,
 				7BD1D3E424E54A1900D78348 /* BobblePullViewController.swift */,
-				7B382D5C24E55E42009B98E2 /* bobble.swift */,
-				7B17A6BD24EABB8200C1450C /* myBobbles.swift */,
 				7BD1D3F724E54A9600D78348 /* BobbleShareViewController.swift */,
 				7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */,
 				7BD1D3E624E54A1900D78348 /* Main.storyboard */,
@@ -94,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7B8BD8E924EB810000BFED69 /* bobbleiMessageExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B8BD8FD24EB810300BFED69 /* Build configuration list for PBXNativeTarget "bobbleiMessageExtension" */;
+			buildPhases = (
+				7B8BD8E624EB810000BFED69 /* Sources */,
+				7B8BD8E724EB810000BFED69 /* Frameworks */,
+				7B8BD8E824EB810000BFED69 /* Resources */,
+				7BBEEA9F24ED52C9007433A1 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bobbleiMessageExtension;
+			productName = bobbleiMessageExtension;
+			productReference = 7B8BD8EA24EB810000BFED69 /* bobbleiMessageExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		7BD1D3DA24E54A1900D78348 /* bobble */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7BD1D3F424E54A1B00D78348 /* Build configuration list for PBXNativeTarget "bobble" */;
@@ -101,10 +227,13 @@
 				7BD1D3D724E54A1900D78348 /* Sources */,
 				7BD1D3D824E54A1900D78348 /* Frameworks */,
 				7BD1D3D924E54A1900D78348 /* Resources */,
+				7B8BD8FA24EB810300BFED69 /* Embed App Extensions */,
+				7BBEEA9C24ED52C0007433A1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7B8BD8F824EB810300BFED69 /* PBXTargetDependency */,
 			);
 			name = bobble;
 			productName = bauble;
@@ -121,6 +250,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Mikalangelo Wessel";
 				TargetAttributes = {
+					7B8BD8E924EB810000BFED69 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					7BD1D3DA24E54A1900D78348 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -140,11 +272,22 @@
 			projectRoot = "";
 			targets = (
 				7BD1D3DA24E54A1900D78348 /* bobble */,
+				7B8BD8E924EB810000BFED69 /* bobbleiMessageExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7B8BD8E824EB810000BFED69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8BD8F524EB810300BFED69 /* Assets.xcassets in Resources */,
+				7BBEEAEA24ED5C9C007433A1 /* Assets.xcassets in Resources */,
+				7B8BD8F324EB810000BFED69 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7BD1D3D924E54A1900D78348 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,12 +302,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7B8BD8E624EB810000BFED69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8BD8F024EB810000BFED69 /* MessagesViewController.swift in Sources */,
+				7BBEEAE924ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7BD1D3D724E54A1900D78348 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBEEAE824ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */,
 				7BD1D3E524E54A1900D78348 /* BobblePullViewController.swift in Sources */,
-				7B17A6BE24EABB8200C1450C /* myBobbles.swift in Sources */,
 				7BD1D3F824E54A9600D78348 /* BobbleShareViewController.swift in Sources */,
 				7BD1D3FA24E54D2E00D78348 /* BobbleDetailViewController.swift in Sources */,
 				7BD1D3EB24E54A1900D78348 /* bobble.xcdatamodeld in Sources */,
@@ -172,13 +324,28 @@
 				7B382D5B24E55BE6009B98E2 /* BobbleTableViewCell.swift in Sources */,
 				7BD1D3DF24E54A1900D78348 /* AppDelegate.swift in Sources */,
 				7BD1D3E124E54A1900D78348 /* SceneDelegate.swift in Sources */,
-				7B382D5D24E55E42009B98E2 /* bobble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7B8BD8F824EB810300BFED69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B8BD8E924EB810000BFED69 /* bobbleiMessageExtension */;
+			targetProxy = 7B8BD8F724EB810300BFED69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		7B8BD8F124EB810000BFED69 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B8BD8F224EB810000BFED69 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		7BD1D3E624E54A1900D78348 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -198,6 +365,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7B8BD8FB24EB810300BFED69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = bobbleiMessageExtension/bobbleiMessageExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JJ78NJHCL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = bobbleiMessageExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikalanthony.bobble.bobbleiMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B8BD8FC24EB810300BFED69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = bobbleiMessageExtension/bobbleiMessageExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5JJ78NJHCL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = bobbleiMessageExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikalanthony.bobble.bobbleiMessageExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7BD1D3F224E54A1B00D78348 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,9 +532,15 @@
 		7BD1D3F524E54A1B00D78348 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bobble/bobble.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JJ78NJHCL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bobble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,9 +556,15 @@
 		7BD1D3F624E54A1B00D78348 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bobble/bobble.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JJ78NJHCL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = bobble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,6 +580,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7B8BD8FD24EB810300BFED69 /* Build configuration list for PBXNativeTarget "bobbleiMessageExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B8BD8FB24EB810300BFED69 /* Debug */,
+				7B8BD8FC24EB810300BFED69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7BD1D3D624E54A1900D78348 /* Build configuration list for PBXProject "bobble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
