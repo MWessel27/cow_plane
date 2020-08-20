@@ -205,6 +205,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBv-F8-M8a">
+                                <rect key="frame" x="346" y="787" width="48" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="R6O-XE-Rp5"/>
+                                    <constraint firstAttribute="height" constant="49" id="m87-ax-kj5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="square.and.arrow.up" catalog="system"/>
+                                <connections>
+                                    <action selector="bobbleShareButtonTapped:" destination="q68-1p-Y3F" eventType="touchUpInside" id="hsB-Bm-Aei"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -215,9 +227,12 @@
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="bottom" secondItem="pYT-4K-XFb" secondAttribute="bottom" constant="67" id="6pn-8T-Ms7"/>
                             <constraint firstItem="pYT-4K-XFb" firstAttribute="top" secondItem="IEb-ZX-Tza" secondAttribute="bottom" constant="58" id="AOf-W6-F8s"/>
                             <constraint firstItem="NZa-s2-Cz1" firstAttribute="top" secondItem="caR-Y2-Rja" secondAttribute="top" constant="49" id="AUu-zu-nnu"/>
+                            <constraint firstItem="WBv-F8-M8a" firstAttribute="top" secondItem="Ah1-FV-Myn" secondAttribute="bottom" constant="299" id="Axv-DU-o6F"/>
+                            <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" secondItem="WBv-F8-M8a" secondAttribute="trailing" constant="20" id="B1j-Vq-c1h"/>
                             <constraint firstItem="63c-Wn-EhD" firstAttribute="leading" secondItem="caR-Y2-Rja" secondAttribute="leading" constant="57" id="C9Q-lr-mRn"/>
                             <constraint firstItem="IEb-ZX-Tza" firstAttribute="top" secondItem="63c-Wn-EhD" secondAttribute="bottom" constant="8" id="Hp4-ry-P89"/>
                             <constraint firstItem="Ah1-FV-Myn" firstAttribute="leading" secondItem="Om5-lT-8Zl" secondAttribute="trailing" constant="8" id="KkW-yK-0o0"/>
+                            <constraint firstItem="WBv-F8-M8a" firstAttribute="leading" secondItem="caR-Y2-Rja" secondAttribute="leading" constant="346" id="NW1-r0-EEZ"/>
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="bottom" secondItem="Ah1-FV-Myn" secondAttribute="bottom" constant="373" id="Otz-4y-lWt"/>
                             <constraint firstItem="63c-Wn-EhD" firstAttribute="top" secondItem="NZa-s2-Cz1" secondAttribute="bottom" constant="33" id="Pu4-K5-A6A"/>
                             <constraint firstItem="Ah1-FV-Myn" firstAttribute="leading" secondItem="Om5-lT-8Zl" secondAttribute="trailing" constant="8" id="R0c-xo-bPe"/>
@@ -227,6 +242,7 @@
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" secondItem="pYT-4K-XFb" secondAttribute="trailing" constant="20" id="VrF-Jt-kRk"/>
                             <constraint firstItem="Om5-lT-8Zl" firstAttribute="top" secondItem="63c-Wn-EhD" secondAttribute="bottom" constant="7" id="XLP-Hg-u96"/>
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="bottom" secondItem="IEb-ZX-Tza" secondAttribute="bottom" constant="373" id="a0z-ZC-sBQ"/>
+                            <constraint firstItem="caR-Y2-Rja" firstAttribute="bottom" secondItem="WBv-F8-M8a" secondAttribute="bottom" constant="25" id="aHR-a9-BAi"/>
                             <constraint firstItem="caR-Y2-Rja" firstAttribute="trailing" secondItem="63c-Wn-EhD" secondAttribute="trailing" constant="57" id="cbT-o8-JHr"/>
                             <constraint firstItem="NZa-s2-Cz1" firstAttribute="leading" secondItem="caR-Y2-Rja" secondAttribute="leading" constant="174" id="duI-cz-4So"/>
                             <constraint firstItem="Om5-lT-8Zl" firstAttribute="leading" secondItem="IEb-ZX-Tza" secondAttribute="trailing" constant="8" id="jgQ-F8-mGk"/>
@@ -241,6 +257,7 @@
                         <outlet property="bobbleNameLabel" destination="NZa-s2-Cz1" id="2jU-lx-JFg"/>
                         <outlet property="bobbleNumberLabel" destination="IEb-ZX-Tza" id="Jo9-RA-rmw"/>
                         <outlet property="bobbleOutOfLabel" destination="Ah1-FV-Myn" id="C9H-Km-eCG"/>
+                        <outlet property="bobbleShareButton" destination="WBv-F8-M8a" id="Zid-1v-SdA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dz-wp-hOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

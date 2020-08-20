@@ -97,6 +97,27 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+    
+    func composeMessage(myBobble: myBobbles) -> MSMessage? {
+        var components = URLComponents()
+
+        let bobbleId = URLQueryItem(name: "id", value: String(myBobble.id))
+
+        components.queryItems = [bobbleId]
+
+        let message = MSMessage()
+
+        let alternateMessageLayout = MSMessageTemplateLayout()
+
+        alternateMessageLayout.caption = "You've been sent a bobble!"
+           
+        alternateMessageLayout.image = UIImage(named: "sendBobbleImage")
+
+        message.layout = alternateMessageLayout
+        message.url = components.url
+
+        return message
+    }
 
 }
 
@@ -132,25 +153,11 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-//            guard let bobbleDetailVC = storyboard?.instantiateViewController(withIdentifier: "BobbleDetailViewController")
-//            as? BobbleDetailViewController else {
-//                assertionFailure("No view controller ID BobbleDetailViewController in storyboard")
-//                return
-//            }
-//            
-//            bobbleDetailVC.delegate = self
-//
-//            let wonBobble = myWonBobbles[indexPath.row]
-//            var selectedBobble: Bobble?
-//            for bob in bobbles {
-//                if(bob.id == wonBobble.id) {
-//                    selectedBobble = bob
-//                }
-//            }
-//            bobbleDetailVC.bobble = selectedBobble
-//              
-//          // present the view controller modally without animation
-//          self.present(bobbleDetailVC, animated: false, completion: nil)
+        
+        guard let conversation = activeConversation else { fatalError("expected a conversation")}
+        
+        guard let message = composeMessage(myBobble: myWonBobbles[indexPath.row]) else { return }
+        
+        conversation.insert(message) { error in if let error = error { print(error) }}
     }
 }
