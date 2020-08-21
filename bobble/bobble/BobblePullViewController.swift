@@ -66,11 +66,6 @@ class BobblePullViewController: UIViewController {
         }
     }
     
-//    func addBobble(bobble: Bobble) {
-//        bobbles.append(bobble)
-//        saveBobbles()
-//    }
-    
     func addBobble(id: Int) {
         var count = 0
         for bobble in bobbles {

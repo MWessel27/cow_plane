@@ -10,6 +10,7 @@ import UIKit
 import Messages
 import bobbleFramework
 import myBobblesFramework
+import os.log
 
 class MessagesViewController: MSMessagesAppViewController {
     
@@ -23,12 +24,6 @@ class MessagesViewController: MSMessagesAppViewController {
         
         bobbleTableView.delegate = self
         bobbleTableView.dataSource = self
-        
-        if let userDefaults = UserDefaults.init(suiteName: "group.mikalanthony.bobble") {
-            let test = userDefaults.string(forKey: "didPreloadData")
-            print(userDefaults.string(forKey: "didPreloadData"))
-        }
-        print("test")
         
         if let savedBobbles = loadBobbles() {
             bobbles += savedBobbles
@@ -50,7 +45,18 @@ class MessagesViewController: MSMessagesAppViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
     }
     
+    private func saveMyBobbles() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(myWonBobbles, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobbles successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
+    
     // MARK: - Conversation Handling
+    
     
     override func willBecomeActive(with conversation: MSConversation) {
         // Called when the extension is about to move from the inactive to active state.
@@ -78,6 +84,24 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didStartSending(_ message: MSMessage, conversation: MSConversation) {
         // Called when the user taps the send button.
+        print(message.url?.absoluteString)
+        let queryItems = URLComponents(string: message.url!.absoluteString)?.queryItems
+        let idParam = queryItems?.filter({$0.name == "id"}).first
+
+        print(idParam?.value)
+        
+        let bobbleId = Int((idParam?.value)!)
+        
+        var count = 0
+        for bobble in myWonBobbles {
+            if(bobble.id == bobbleId) {
+                myWonBobbles.remove(at: count)
+                break
+            }
+            count += 1
+        }
+        saveMyBobbles()
+        self.bobbleTableView.reloadData()
     }
     
     override func didCancelSending(_ message: MSMessage, conversation: MSConversation) {
@@ -99,6 +123,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     func composeMessage(myBobble: myBobbles) -> MSMessage? {
+        
         var components = URLComponents()
 
         let bobbleId = URLQueryItem(name: "id", value: String(myBobble.id))
@@ -113,7 +138,10 @@ class MessagesViewController: MSMessagesAppViewController {
            
         alternateMessageLayout.image = UIImage(named: "sendBobbleImage")
 
+        alternateMessageLayout.imageTitle = "Mystery Bobble"
+        
         message.layout = alternateMessageLayout
+        message.summaryText = "You've Received a Mystery Bobble!"
         message.url = components.url
 
         return message
@@ -143,11 +171,6 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.bobbleRarityOutOfLabel.text = String(bob.outOf)
             }
         }
-        
-//        cell.bobbleImageView.image = UIImage(named: bobble.image)
-//        cell.bobbleNameLabel.text = bobble.name
-//        cell.bobbleRarityLabel.text = String(bobble.number)
-//        cell.bobbleRarityOutOfLabel.text = String(bobble.outOf)
         
         return cell
     }

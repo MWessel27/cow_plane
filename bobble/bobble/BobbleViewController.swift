@@ -12,6 +12,7 @@ import myBobblesFramework
 
 protocol viewBobble {
     func viewBobble(bobble: Bobble)
+    func modalDismissed()
 }
 
 class BobbleViewController: UIViewController, viewBobble {
@@ -22,6 +23,8 @@ class BobbleViewController: UIViewController, viewBobble {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        NotificationCenter.default.addObserver(self, selector:#selector(reloadTableViewFromBackground), name: UIApplication.willEnterForegroundNotification, object: nil)
         // Do any additional setup after loading the view.
         bobbleTableView.delegate = self
         bobbleTableView.dataSource = self
@@ -51,6 +54,21 @@ class BobbleViewController: UIViewController, viewBobble {
         self.bobbleTableView.reloadData()
     }
     
+    @objc private func reloadTableViewFromBackground() {
+        bobbles = []
+        myWonBobbles = []
+        
+        if let savedBobbles = loadBobbles() {
+            bobbles += savedBobbles
+        }
+        
+        if let wonBobbles = loadMyBobbles() {
+            myWonBobbles += wonBobbles
+        }
+        
+        self.bobbleTableView.reloadData()
+    }
+    
     private func loadBobbles() -> [Bobble]? {
         let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobbles")
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [Bobble]
@@ -63,6 +81,14 @@ class BobbleViewController: UIViewController, viewBobble {
     
     func viewBobble(bobble: Bobble) {
         return
+    }
+    
+    func modalDismissed() {
+        myWonBobbles = []
+        if let wonBobbles = loadMyBobbles() {
+            myWonBobbles += wonBobbles
+        }
+        self.bobbleTableView.reloadData()
     }
 }
 
@@ -99,25 +125,25 @@ extension BobbleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
-            guard let bobbleDetailVC = storyboard?.instantiateViewController(withIdentifier: "BobbleDetailViewController")
-            as? BobbleDetailViewController else {
-                assertionFailure("No view controller ID BobbleDetailViewController in storyboard")
-                return
-            }
-            
-            bobbleDetailVC.delegate = self
+        guard let bobbleDetailVC = storyboard?.instantiateViewController(withIdentifier: "BobbleDetailViewController")
+        as? BobbleDetailViewController else {
+            assertionFailure("No view controller ID BobbleDetailViewController in storyboard")
+            return
+        }
 
-            let wonBobble = myWonBobbles[indexPath.row]
-            var selectedBobble: Bobble?
-            for bob in bobbles {
-                if(bob.id == wonBobble.id) {
-                    selectedBobble = bob
-                }
+        bobbleDetailVC.delegate = self
+
+        let wonBobble = myWonBobbles[indexPath.row]
+        var selectedBobble: Bobble?
+        for bob in bobbles {
+            if(bob.id == wonBobble.id) {
+                selectedBobble = bob
             }
-            bobbleDetailVC.bobble = selectedBobble
-              
-          // present the view controller modally without animation
-          self.present(bobbleDetailVC, animated: false, completion: nil)
+        }
+        bobbleDetailVC.bobble = selectedBobble
+
+        // present the view controller modally without animation
+        self.present(bobbleDetailVC, animated: false, completion: nil)
     }
 }
 
