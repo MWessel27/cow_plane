@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import bobbleFramework
+import myBobblesFramework
+import os.log
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var bobbles = [Bobble]()
+    var myWonBobbles = [myBobbles]()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
         guard let _ = (scene as? UIWindowScene) else { return }
+        self.scene(scene, openURLContexts: connectionOptions.urlContexts)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,7 +57,65 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
+    
+    private func loadBobbles() -> [Bobble]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [Bobble]
+    }
+    
+    private func loadMyBobbles() -> [myBobbles]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
+    }
+    
+    private func saveMyBobbles() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(myWonBobbles, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobbles successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+        bobbles = []
+        myWonBobbles = []
+        if let savedBobbles = loadBobbles() {
+            bobbles += savedBobbles
+        }
+        
+        if let wonBobbles = loadMyBobbles() {
+            myWonBobbles += wonBobbles
+        }
+        
+        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+
+        let bobbleId = Int(urlComponents?.host ?? "")
+        guard let bobbleDetailVC = self.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "BobbleDetailViewController") as? BobbleDetailViewController else {
+                   assertionFailure("No view controller ID BobbleDetailViewController in storyboard")
+                   return
+               }
+        var selectedBobble: Bobble?
+        for bobble in bobbles {
+            if(bobble.id == bobbleId) {
+                selectedBobble = bobble
+                let wonBobble = myBobbles(id: bobbleId!)!
+                myWonBobbles.append(wonBobble)
+                break
+            }
+        }
+        bobbleDetailVC.bobble = selectedBobble
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController?.present(bobbleDetailVC, animated: true, completion: nil)
+        
+        saveMyBobbles()
+    }
+    
 
 }
 

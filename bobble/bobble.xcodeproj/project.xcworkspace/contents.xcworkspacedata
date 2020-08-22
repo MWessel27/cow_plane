@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/mikalangelowessel/Desktop/dev/cow_plane/bobble/bobble/bobbleUniverse.json">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

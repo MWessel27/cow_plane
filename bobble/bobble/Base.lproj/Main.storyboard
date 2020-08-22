@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-yp-oQp">
-                                <rect key="frame" x="169" y="433" width="77" height="30"/>
+                                <rect key="frame" x="82" y="342" width="251" height="213"/>
                                 <state key="normal" title="Pull Bobble"/>
                                 <connections>
                                     <action selector="pullBobbleButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="d9X-Zk-VNa"/>
@@ -127,10 +127,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vCJ-yp-oQp" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="345" id="1E2-Mi-0mh"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="vCJ-yp-oQp" secondAttribute="trailing" constant="168" id="77c-wl-gOi"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="vCJ-yp-oQp" secondAttribute="bottom" constant="350" id="PlF-7Y-TMV"/>
-                            <constraint firstItem="vCJ-yp-oQp" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="169" id="Sb2-kg-5LU"/>
+                            <constraint firstItem="vCJ-yp-oQp" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="254" id="FKr-Ka-HdL"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="vCJ-yp-oQp" secondAttribute="bottom" constant="258" id="Tg6-ax-Q3n"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="vCJ-yp-oQp" secondAttribute="trailing" constant="81" id="gwK-hy-aTz"/>
+                            <constraint firstItem="vCJ-yp-oQp" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="82" id="tpt-Dm-0AW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
         <!--Share-->
         <scene sceneID="dWd-CN-FZu">
