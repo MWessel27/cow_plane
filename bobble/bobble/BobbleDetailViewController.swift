@@ -9,6 +9,7 @@
 import UIKit
 import bobbleFramework
 import myBobblesFramework
+import bobbleTransactionLogFramework
 import Messages
 import MessageUI
 import os.log
@@ -19,6 +20,7 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
     var bobble: Bobble?
     var sentBobbleId: Int = 0
     var myWonBobbles = [myBobbles]()
+    var transactionLogIds = [bobbleTransactionLog]()
     var onDoneBlock: ((Bool) -> Void)?
     
     @IBOutlet var bobbleNameLabel: UILabel!
@@ -41,15 +43,24 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         
         if let wonBobbles = loadMyBobbles() {
                 myWonBobbles += wonBobbles
-            }
         }
+        
+        if let transactionLog = loadMyTransactionLog() {
+            transactionLogIds += transactionLog
+        }
+    }
         
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myWonBobbles = []
+        transactionLogIds = []
         
         if let wonBobbles = loadMyBobbles() {
             myWonBobbles += wonBobbles
+        }
+        
+        if let transactionLog = loadMyTransactionLog() {
+            transactionLogIds += transactionLog
         }
     }
     
@@ -63,9 +74,24 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         }
     }
     
+    private func saveMyTransactionLog() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("transactionLog")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(transactionLogIds, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Transaction Log successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Transaction Log to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
+    
     private func loadMyBobbles() -> [myBobbles]? {
         let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
+    }
+    
+    private func loadMyTransactionLog() -> [bobbleTransactionLog]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("transactionLog")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [bobbleTransactionLog]
     }
     
     fileprivate func composeMessage(with bobble: Bobble) {
@@ -120,6 +146,10 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         self.dismiss(animated: true, completion: nil)
     }
     
+    func generateRandomTransactionID() -> Int? {
+        return Int.random(in: 1...1000000)
+    }
+    
     @IBAction func bobbleShareButtonTapped(_ sender: Any) {
         sentBobbleId = bobble!.id
 
@@ -127,8 +157,10 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
             var components = URLComponents()
             
             let bobbleId = URLQueryItem(name: "id", value: String(bobble!.id))
+            let transactionIDString = generateRandomTransactionID()!
+            let transactionID = URLQueryItem(name: "transactionID", value: String(transactionIDString))
             
-            components.queryItems = [bobbleId]
+            components.queryItems = [bobbleId, transactionID]
             
             let controller = MFMessageComposeViewController()
 

@@ -10,12 +10,14 @@ import UIKit
 import Messages
 import bobbleFramework
 import myBobblesFramework
+import bobbleTransactionLogFramework
 import os.log
 
 class MessagesViewController: MSMessagesAppViewController {
     
     var bobbles = [Bobble]()
     var myWonBobbles = [myBobbles]()
+    var transactionLogIds = [bobbleTransactionLog]()
     var firstOpenExpanded = true
     
     @IBOutlet var bobbleTableView: UITableView!
@@ -34,6 +36,10 @@ class MessagesViewController: MSMessagesAppViewController {
             myWonBobbles += wonBobbles
         }
         
+        if let transactionLog = loadMyTransactionLog() {
+            transactionLogIds += transactionLog
+        }
+        
         self.bobbleTableView.reloadData()
     }
     
@@ -47,6 +53,11 @@ class MessagesViewController: MSMessagesAppViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
     }
     
+    private func loadMyTransactionLog() -> [bobbleTransactionLog]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("transactionLog")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [bobbleTransactionLog]
+    }
+    
     private func saveMyBobbles() {
         let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(myWonBobbles, toFile: ArchiveURL!.path)
@@ -57,6 +68,16 @@ class MessagesViewController: MSMessagesAppViewController {
         }
     }
     
+    private func saveMyTransactionLog() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("transactionLog")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(transactionLogIds, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Transaction Log successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Transaction Log to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
+    
     // MARK: - Conversation Handling
     override func willSelect(_ message: MSMessage, conversation: MSConversation) {
         if let selectedMessage = conversation.selectedMessage {
@@ -64,15 +85,38 @@ class MessagesViewController: MSMessagesAppViewController {
                 // you sent this iMessage
             } else {
                 // you recieved this iMessage
-                let queryItems = URLComponents(string: message.url!.absoluteString)?.queryItems
-                        let idParam = queryItems?.filter({$0.name == "id"}).first
+                let queryItems = URLComponents(string: selectedMessage.url!.absoluteString)?.queryItems
+                let idParam = queryItems?.filter({$0.name == "id"}).first
+                let transactionLogID = queryItems?.filter({$0.name == "transactionID"}).first
+                print(idParam?.value)
+                print(transactionLogID?.value)
+                let transactionLogIDString = String((transactionLogID?.value)!)
+                let transactionLogIDInt = Int(transactionLogIDString)
+                
+                transactionLogIds = []
+                if let transactionLog = loadMyTransactionLog() {
+                    transactionLogIds += transactionLog
+                }
+                
+                var validTransaction = true
+                for transaction in transactionLogIds {
+                    if(transaction.transactionId == transactionLogIDInt) {
+                        validTransaction = false
+                    }
+                }
+                
+                if(validTransaction) {
+                    let bobbleId = Int((idParam!.value!))
+                    let url = URL(string: "bobble://\(bobbleId!)")
+                    print(url?.absoluteString)
 
-                let bobbleId = Int((idParam!.value!))
-                let url = URL(string: "bobble://\(bobbleId!)")
-
-                self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
-                         
-                })
+                    self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
+                             
+                    })
+                    guard let newTransactionLog = bobbleTransactionLog(transactionId: transactionLogIDInt ?? 0) else { return }
+                    transactionLogIds.append(newTransactionLog)
+                    saveMyTransactionLog()
+                }
             }
         }
     }
@@ -83,15 +127,38 @@ class MessagesViewController: MSMessagesAppViewController {
                 // you sent this iMessage
             } else {
                 // you recieved this iMessage
-                let queryItems = URLComponents(string: message.url!.absoluteString)?.queryItems
-                        let idParam = queryItems?.filter({$0.name == "id"}).first
+                let queryItems = URLComponents(string: selectedMessage.url!.absoluteString)?.queryItems
+                let idParam = queryItems?.filter({$0.name == "id"}).first
+                let transactionLogID = queryItems?.filter({$0.name == "transactionID"}).first
+                print(idParam?.value)
+                print(transactionLogID?.value)
+                let transactionLogIDString = String((transactionLogID?.value)!)
+                let transactionLogIDInt = Int(transactionLogIDString)
+                
+                transactionLogIds = []
+                if let transactionLog = loadMyTransactionLog() {
+                    transactionLogIds += transactionLog
+                }
+                
+                var validTransaction = true
+                for transaction in transactionLogIds {
+                    if(transaction.transactionId == transactionLogIDInt) {
+                        validTransaction = false
+                    }
+                }
+                
+                if(validTransaction) {
+                    let bobbleId = Int((idParam!.value!))
+                    let url = URL(string: "bobble://\(bobbleId!)")
+                    print(url?.absoluteString)
 
-                let bobbleId = Int((idParam!.value!))
-                let url = URL(string: "bobble://\(bobbleId!)")
-
-                self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
-                         
-                })
+                    self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
+                             
+                    })
+                    guard let newTransactionLog = bobbleTransactionLog(transactionId: transactionLogIDInt ?? 0) else { return }
+                    transactionLogIds.append(newTransactionLog)
+                    saveMyTransactionLog()
+                }
             }
         }
     }
@@ -108,15 +175,37 @@ class MessagesViewController: MSMessagesAppViewController {
             } else {
                 // you recieved this iMessage
                 let queryItems = URLComponents(string: selectedMessage.url!.absoluteString)?.queryItems
-                        let idParam = queryItems?.filter({$0.name == "id"}).first
+                let idParam = queryItems?.filter({$0.name == "id"}).first
+                let transactionLogID = queryItems?.filter({$0.name == "transactionID"}).first
+                print(idParam?.value)
+                print(transactionLogID?.value)
+                let transactionLogIDString = String((transactionLogID?.value)!)
+                let transactionLogIDInt = Int(transactionLogIDString)
+                
+                transactionLogIds = []
+                if let transactionLog = loadMyTransactionLog() {
+                    transactionLogIds += transactionLog
+                }
+                
+                var validTransaction = true
+                for transaction in transactionLogIds {
+                    if(transaction.transactionId == transactionLogIDInt) {
+                        validTransaction = false
+                    }
+                }
+                
+                if(validTransaction) {
+                    let bobbleId = Int((idParam!.value!))
+                    let url = URL(string: "bobble://\(bobbleId!)")
+                    print(url?.absoluteString)
 
-                let bobbleId = Int((idParam!.value!))
-                let url = URL(string: "bobble://\(bobbleId!)")
-                print(url?.absoluteString)
-
-                self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
-                         
-                })
+                    self.extensionContext?.open(url!, completionHandler: { (success: Bool) in
+                             
+                    })
+                    guard let newTransactionLog = bobbleTransactionLog(transactionId: transactionLogIDInt ?? 0) else { return }
+                    transactionLogIds.append(newTransactionLog)
+                    saveMyTransactionLog()
+                }
             }
         }
     }
@@ -138,7 +227,7 @@ class MessagesViewController: MSMessagesAppViewController {
             } else {
                 // you recieved this iMessage
                 let queryItems = URLComponents(string: message.url!.absoluteString)?.queryItems
-                        let idParam = queryItems?.filter({$0.name == "id"}).first
+                let idParam = queryItems?.filter({$0.name == "id"}).first
 
                 let bobbleId = Int((idParam!.value!))
                 let url = URL(string: "bobble://\(bobbleId!)")
@@ -190,15 +279,15 @@ class MessagesViewController: MSMessagesAppViewController {
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
     
-    func composeMessage(myBobble: myBobbles, redeemed: String) -> MSMessage? {
+    func composeMessage(myBobble: myBobbles, randomTransactionId: Int) -> MSMessage? {
         
         var components = URLComponents()
 
         let bobbleId = URLQueryItem(name: "id", value: String(myBobble.id))
-//        let redeemed = URLQueryItem(name: "redeemed", value: redeemed)
+        let transactionID = URLQueryItem(name: "transactionID", value: String(randomTransactionId))
 
-//        components.queryItems = [bobbleId, redeemed]
-        components.queryItems = [bobbleId]
+        components.queryItems = [bobbleId, transactionID]
+//        components.queryItems = [bobbleId]
 
         let message = MSMessage()
 
@@ -215,6 +304,10 @@ class MessagesViewController: MSMessagesAppViewController {
         message.url = components.url
 
         return message
+    }
+    
+    func generateRandomTransactionID() -> Int? {
+        return Int.random(in: 1...1000000)
     }
 
 }
@@ -249,7 +342,7 @@ extension MessagesViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let conversation = activeConversation else { fatalError("expected a conversation")}
         
-        guard let message = composeMessage(myBobble: myWonBobbles[indexPath.row], redeemed: "no") else { return }
+        guard let message = composeMessage(myBobble: myWonBobbles[indexPath.row], randomTransactionId: generateRandomTransactionID()!) else { return }
         
         conversation.insert(message) { error in if let error = error { print(error) }}
     }

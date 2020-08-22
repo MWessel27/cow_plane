@@ -1,0 +1,11 @@
+framework module bobbleTransactionLogFramework {
+  umbrella header "bobbleTransactionLogFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module bobbleTransactionLogFramework.Swift {
+    header "bobbleTransactionLogFramework-Swift.h"
+    requires objc
+}
