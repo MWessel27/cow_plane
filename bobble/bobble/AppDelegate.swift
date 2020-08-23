@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import os.log
 import bobbleFramework
+import BobblePullTokenFramework
 
 struct Bobbles: Decodable {
     let id: Int
@@ -23,6 +24,7 @@ struct Bobbles: Decodable {
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var bobbleUniverse = [Bobble]()
+    var bobblePullTokens = [BobblePullTokens]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -75,12 +77,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    private func savePullTokens() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(bobblePullTokens, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobble pull tokens successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobble pull tokens...", log: OSLog.default, type: .error)
+        }
+    }
+    
     private func parse(jsonData: Data) {
         let preloadedDataKey = "didPreloadData"
 //        let userDefaults = UserDefaults.standard
         if let userDefaults = UserDefaults.init(suiteName: "group.mikalanthony.bobble") {
         
             if userDefaults.bool(forKey: preloadedDataKey) == false {
+                bobblePullTokens.append( BobblePullTokens(bobblePullTokenCount: 4)!)
+                self.savePullTokens()
                 do {
                     
                     let backgroundContext = persistentContainer.newBackgroundContext()

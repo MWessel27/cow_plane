@@ -10,6 +10,7 @@ import UIKit
 import bobbleFramework
 import myBobblesFramework
 import bobbleTransactionLogFramework
+import BobblePullTokenFramework
 import Messages
 import MessageUI
 import os.log
@@ -21,6 +22,7 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
     var sentBobbleId: Int = 0
     var myWonBobbles = [myBobbles]()
     var transactionLogIds = [bobbleTransactionLog]()
+    var bobblePullTokens = [BobblePullTokens]()
     var onDoneBlock: ((Bool) -> Void)?
     
     @IBOutlet var bobbleNameLabel: UILabel!
@@ -48,12 +50,17 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         if let transactionLog = loadMyTransactionLog() {
             transactionLogIds += transactionLog
         }
+        
+        if let pullTokens = loadMyPullTokens() {
+            bobblePullTokens += pullTokens
+        }
     }
         
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myWonBobbles = []
         transactionLogIds = []
+        bobblePullTokens = []
         
         if let wonBobbles = loadMyBobbles() {
             myWonBobbles += wonBobbles
@@ -61,6 +68,10 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         
         if let transactionLog = loadMyTransactionLog() {
             transactionLogIds += transactionLog
+        }
+        
+        if let pullTokens = loadMyPullTokens() {
+            bobblePullTokens += pullTokens
         }
     }
     
@@ -94,6 +105,21 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [bobbleTransactionLog]
     }
     
+    private func loadMyPullTokens() -> [BobblePullTokens]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [BobblePullTokens]
+    }
+    
+    private func savePullTokens() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(bobblePullTokens, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobble pull tokens successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobble pull tokens...", log: OSLog.default, type: .error)
+        }
+    }
+    
     fileprivate func composeMessage(with bobble: Bobble) {
         if MFMessageComposeViewController.canSendText() {
             var components = URLComponents()
@@ -119,7 +145,8 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
             messageComposeViewController.body = bobble.name
             present(messageComposeViewController, animated: true, completion: nil)
         }
-        
+        bobblePullTokens[0].bobblePullTokenCount += 1
+        savePullTokens()
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -177,6 +204,8 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
             message.layout = alternateMessageLayout
             message.summaryText = "You've Received a Mystery Bobble!"
             
+            message.shouldExpire = true
+            
             message.layout = alternateMessageLayout
             message.url = components.url
             controller.message = message
@@ -185,6 +214,9 @@ class BobbleDetailViewController: UIViewController, MFMessageComposeViewControll
             controller.messageComposeDelegate = self
             
             self.present(controller, animated: true, completion: nil)
+            
+            bobblePullTokens[0].bobblePullTokenCount += 1
+            savePullTokens()
         }
     }
 

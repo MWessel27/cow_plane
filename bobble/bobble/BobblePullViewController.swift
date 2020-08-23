@@ -10,14 +10,19 @@ import UIKit
 import os.log
 import bobbleFramework
 import myBobblesFramework
+import BobblePullTokenFramework
 
 class BobblePullViewController: UIViewController {
     
     @IBOutlet var pullBobbleButton: UIButton!
+    @IBOutlet var pullTokenCountLabel: UILabel!
+    @IBOutlet var addTestTokensButton: UIButton!
+    
     
     var bobbles = [Bobble]()
     var bobble: Bobble?
     var myWonBobbles = [myBobbles]()
+    var bobblePullTokens = [BobblePullTokens]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +34,19 @@ class BobblePullViewController: UIViewController {
         if let wonBobbles = loadMyBobbles() {
             myWonBobbles += wonBobbles
         }
+        
+        if let pullTokens = loadMyPullTokens() {
+            bobblePullTokens += pullTokens
+        }
+        
+        pullTokenCountLabel.text = String(bobblePullTokens[0].bobblePullTokenCount)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         bobbles = []
         myWonBobbles = []
+        bobblePullTokens = []
         
         // Do any additional setup after loading the view.
         if let savedBobbles = loadBobbles() {
@@ -44,6 +56,12 @@ class BobblePullViewController: UIViewController {
         if let wonBobbles = loadMyBobbles() {
             myWonBobbles += wonBobbles
         }
+        
+        if let pullTokens = loadMyPullTokens() {
+            bobblePullTokens += pullTokens
+        }
+        
+        pullTokenCountLabel.text = String(bobblePullTokens[0].bobblePullTokenCount)
     }
     
     private func loadBobbles() -> [Bobble]? {
@@ -54,6 +72,21 @@ class BobblePullViewController: UIViewController {
     private func loadMyBobbles() -> [myBobbles]? {
         let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("myBobbles")
         return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [myBobbles]
+    }
+    
+    private func loadMyPullTokens() -> [BobblePullTokens]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [BobblePullTokens]
+    }
+    
+    private func savePullTokens() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(bobblePullTokens, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobble pull tokens successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobble pull tokens...", log: OSLog.default, type: .error)
+        }
     }
 
     private func saveMyBobbles() {
@@ -92,38 +125,57 @@ class BobblePullViewController: UIViewController {
         self.present(bobbleDetailVC, animated: false, completion: nil)
         saveMyBobbles()
     }
+    
+    func outOfPullTokens() {
+        let alert = UIAlertController(title: "Out of bobble tokens!", message: "Sorry, you're all out of bobble tokens. Try sending one to your friends or trying again tomorrow.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+              switch action.style{
+              case .default:
+                    print("default")
+
+              case .cancel:
+                    print("cancel")
+
+              case .destructive:
+                    print("destructive")
+
+        }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func addTestTokensButtonTapped(_ sender: Any) {
+        bobblePullTokens[0].bobblePullTokenCount += 5
+        savePullTokens()
+        pullTokenCountLabel.text = String(bobblePullTokens[0].bobblePullTokenCount)
+    }
+    
 
     @IBAction func pullBobbleButtonTapped(_ sender: Any) {
-//        if(bobbles.isEmpty) {
-//            print("Bobbles empty, creating bobble")
-//            bobble = Bobble(id: 1, probability: ".test", image: "boxy", name: "boxy", number: 1, outOf: 500, bobbleDescription: "The epic legend of boxy the magical box...")
-//            addBobble(bobble: bobble!)
-//        } else {
-//            print("Bobbles not empty, exiting")
-//            return
-//        }
-        var probabilityDoubles = [(Int, Double)]()
-        var count = 0
-        for bobble in bobbles {
-            if(bobble.probability == ".ultra") {
-                probabilityDoubles.append((bobble.id, 0.04))
-//                probabilityDoubles.append(0.04)
-            } else if(bobble.probability == ".rare") {
-                probabilityDoubles.append((bobble.id, 0.08))
-//                probabilityDoubles.append(0.08)
-            } else if(bobble.probability == ".moderate") {
-                probabilityDoubles.append((bobble.id, 0.16))
-//                probabilityDoubles.append(0.16)
-            } else if(bobble.probability == ".average") {
-                probabilityDoubles.append((bobble.id, 0.29))
-//                probabilityDoubles.append(0.29)
-            } else {
-                probabilityDoubles.append((bobble.id, 0.41))
-//                probabilityDoubles.append(0.41)
+        
+        if(bobblePullTokens[0].bobblePullTokenCount > 0) {
+            var probabilityDoubles = [(Int, Double)]()
+            var count = 0
+            for bobble in bobbles {
+                if(bobble.probability == ".ultra") {
+                    probabilityDoubles.append((bobble.id, 0.04))
+                } else if(bobble.probability == ".rare") {
+                    probabilityDoubles.append((bobble.id, 0.08))
+                } else if(bobble.probability == ".moderate") {
+                    probabilityDoubles.append((bobble.id, 0.16))
+                } else if(bobble.probability == ".average") {
+                    probabilityDoubles.append((bobble.id, 0.29))
+                } else {
+                    probabilityDoubles.append((bobble.id, 0.41))
+                }
+                count += 1
             }
-            count += 1
+            addBobble(id: randomNumber(probabilities: probabilityDoubles))
+            bobblePullTokens[0].bobblePullTokenCount -= 1
+            pullTokenCountLabel.text = String(bobblePullTokens[0].bobblePullTokenCount)
+            savePullTokens()
+        } else {
+            outOfPullTokens()
         }
-        addBobble(id: randomNumber(probabilities: probabilityDoubles))
     }
     
     func randomNumber(probabilities: [(Int, Double)]) -> Int {

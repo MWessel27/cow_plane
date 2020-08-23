@@ -124,20 +124,53 @@
                                     <action selector="pullBobbleButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="d9X-Zk-VNa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pull Token Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFD-As-jBT">
+                                <rect key="frame" x="140" y="129" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-Je-0FD">
+                                <rect key="frame" x="165" y="171" width="85" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlA-Mt-bqS">
+                                <rect key="frame" x="150" y="693" width="115" height="30"/>
+                                <state key="normal" title="Add 5 tokens for testing"/>
+                                <connections>
+                                    <action selector="addTestTokensButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="OgT-fa-vBH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JlA-Mt-bqS" firstAttribute="leading" relation="lessThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="150" id="5tD-am-p7b"/>
+                            <constraint firstItem="Bgv-Je-0FD" firstAttribute="top" secondItem="cFD-As-jBT" secondAttribute="bottom" constant="21" id="9FX-Pl-UTC"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Bgv-Je-0FD" secondAttribute="trailing" constant="164" id="ES7-Tc-dHv"/>
                             <constraint firstItem="vCJ-yp-oQp" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="254" id="FKr-Ka-HdL"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cFD-As-jBT" secondAttribute="trailing" constant="140" id="JhT-G2-je4"/>
+                            <constraint firstItem="Bgv-Je-0FD" firstAttribute="top" secondItem="cFD-As-jBT" secondAttribute="bottom" constant="21" id="Job-hM-f4a"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JlA-Mt-bqS" secondAttribute="trailing" constant="149" id="Pms-RD-Xde"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="vCJ-yp-oQp" secondAttribute="bottom" constant="258" id="Tg6-ax-Q3n"/>
+                            <constraint firstItem="cFD-As-jBT" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="41" id="a4u-AP-5Ok"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="vCJ-yp-oQp" secondAttribute="trailing" constant="81" id="gwK-hy-aTz"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="JlA-Mt-bqS" secondAttribute="bottom" constant="90" id="jCb-I8-ykz"/>
+                            <constraint firstItem="JlA-Mt-bqS" firstAttribute="top" secondItem="vCJ-yp-oQp" secondAttribute="bottom" constant="138" id="qVF-S3-um0"/>
+                            <constraint firstItem="vCJ-yp-oQp" firstAttribute="top" secondItem="Bgv-Je-0FD" secondAttribute="bottom" constant="132" id="rbq-ZT-84B"/>
+                            <constraint firstItem="cFD-As-jBT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="140" id="rwY-GB-ml1"/>
                             <constraint firstItem="vCJ-yp-oQp" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="82" id="tpt-Dm-0AW"/>
+                            <constraint firstItem="Bgv-Je-0FD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="165" id="xLC-Gg-toH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pull" image="square.and.arrow.down" catalog="system" id="cPa-gy-q4n"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addTestTokensButton" destination="JlA-Mt-bqS" id="D20-K9-Dcf"/>
                         <outlet property="pullBobbleButton" destination="vCJ-yp-oQp" id="VzP-ay-Dp4"/>
+                        <outlet property="pullTokenCountLabel" destination="Bgv-Je-0FD" id="JzU-zR-Gwm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

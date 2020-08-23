@@ -1,0 +1,11 @@
+framework module BobblePullTokenFramework {
+  umbrella header "BobblePullTokenFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module BobblePullTokenFramework.Swift {
+    header "BobblePullTokenFramework-Swift.h"
+    requires objc
+}

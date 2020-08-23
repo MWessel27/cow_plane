@@ -11,6 +11,7 @@ import Messages
 import bobbleFramework
 import myBobblesFramework
 import bobbleTransactionLogFramework
+import BobblePullTokenFramework
 import os.log
 
 class MessagesViewController: MSMessagesAppViewController {
@@ -18,6 +19,7 @@ class MessagesViewController: MSMessagesAppViewController {
     var bobbles = [Bobble]()
     var myWonBobbles = [myBobbles]()
     var transactionLogIds = [bobbleTransactionLog]()
+    var bobblePullTokens = [BobblePullTokens]()
     var firstOpenExpanded = true
     
     @IBOutlet var bobbleTableView: UITableView!
@@ -38,6 +40,10 @@ class MessagesViewController: MSMessagesAppViewController {
         
         if let transactionLog = loadMyTransactionLog() {
             transactionLogIds += transactionLog
+        }
+        
+        if let pullTokens = loadMyPullTokens() {
+            bobblePullTokens += pullTokens
         }
         
         self.bobbleTableView.reloadData()
@@ -75,6 +81,21 @@ class MessagesViewController: MSMessagesAppViewController {
             os_log("Transaction Log successfully saved.", log: OSLog.default, type: .debug)
         } else {
             os_log("Transaction Log to save Bobbles...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadMyPullTokens() -> [BobblePullTokens]? {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL!.path) as? [BobblePullTokens]
+    }
+    
+    private func savePullTokens() {
+        let ArchiveURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.mikalanthony.bobble")?.appendingPathComponent("bobblePullTokens")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(bobblePullTokens, toFile: ArchiveURL!.path)
+        if isSuccessfulSave {
+            os_log("Bobble pull tokens successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save Bobble pull tokens...", log: OSLog.default, type: .error)
         }
     }
     
@@ -258,6 +279,8 @@ class MessagesViewController: MSMessagesAppViewController {
             count += 1
         }
         saveMyBobbles()
+        bobblePullTokens[0].bobblePullTokenCount += 1
+        savePullTokens()
         self.bobbleTableView.reloadData()
     }
     
@@ -299,6 +322,7 @@ class MessagesViewController: MSMessagesAppViewController {
 
         alternateMessageLayout.imageTitle = "Mystery Bobble"
         
+        message.shouldExpire = true
         message.layout = alternateMessageLayout
         message.summaryText = "You've Received a Mystery Bobble!"
         message.url = components.url
