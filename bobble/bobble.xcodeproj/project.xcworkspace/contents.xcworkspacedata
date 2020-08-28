@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:myBobblesFramework.framework"
+      name = "myBobblesFramework.framework">
+      <Group
+         location = "group:_CodeSignature"
+         name = "_CodeSignature">
+         <FileRef
+            location = "group:CodeResources">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:myBobblesFramework">
+      </FileRef>
+      <Group
+         location = "group:Headers"
+         name = "Headers">
+         <FileRef
+            location = "group:myBobblesFramework-Swift.h">
+         </FileRef>
+         <FileRef
+            location = "group:myBobblesFramework.h">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Modules"
+         name = "Modules">
+         <Group
+            location = "group:myBobblesFramework.swiftmodule"
+            name = "myBobblesFramework.swiftmodule">
+            <FileRef
+               location = "group:arm64-apple-ios.swiftdoc">
+            </FileRef>
+            <FileRef
+               location = "group:arm64.swiftmodule">
+            </FileRef>
+            <FileRef
+               location = "group:arm64-apple-ios.swiftmodule">
+            </FileRef>
+            <FileRef
+               location = "group:arm64.swiftdoc">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:module.modulemap">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Info.plist">
+      </FileRef>
+   </Group>
    <FileRef
       location = "self:">
    </FileRef>

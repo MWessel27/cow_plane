@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		9KIcV97l69p6WnfM7AwkCeFq3nc=
+		o14z+QdjLOmZdJ+hngW6JAgCAxI=
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		9KIcV97l69p6WnfM7AwkCeFq3nc=
+		o14z+QdjLOmZdJ+hngW6JAgCAxI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -64,7 +64,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YBqLHDWVQgaC38WK96hGMbh+JMiGP+KAGaOW2nuqQF4=
+			YXV70CWLNMucMT0FXdUs02oqILZpAjrrnGT0Ed/DnYE=
 			</data>
 		</dict>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftdoc</key>
@@ -78,7 +78,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YBqLHDWVQgaC38WK96hGMbh+JMiGP+KAGaOW2nuqQF4=
+			YXV70CWLNMucMT0FXdUs02oqILZpAjrrnGT0Ed/DnYE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
