@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/bobbleTransactionLogFramework-Swift.h</key>
 		<data>
-		OMy2AbHyKSnUQFcyJ2l5cbrMoMg=
+		r8t3shQ9rFXU4AG7kyAhDWmXwPw=
 		</data>
 		<key>Headers/bobbleTransactionLogFramework.h</key>
 		<data>
@@ -14,23 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		b9LfVzT1jZd9/j+nUIfYJev/MVk=
+		Lr9UHIdA4HynMnZo/FqA3dyNI/4=
+		</data>
+		<key>Modules/bobbleTransactionLogFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<data>
+		mvZWnyanj+W3NWvM+/+8vQyZtQI=
+		</data>
+		<key>Modules/bobbleTransactionLogFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		mvZWnyanj+W3NWvM+/+8vQyZtQI=
 		</data>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		xcXgDYwnHcjpcUaAp1qM3MuvLMg=
+		tKxClH58OLQUV1HhLfZgwoEXiQc=
 		</data>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		w/UmoEPsb3DkpdAbWbXd92FvTTs=
+		ecFjxc+Q2qRcfjHaEnbOueDLZLg=
 		</data>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		xcXgDYwnHcjpcUaAp1qM3MuvLMg=
+		tKxClH58OLQUV1HhLfZgwoEXiQc=
 		</data>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		w/UmoEPsb3DkpdAbWbXd92FvTTs=
+		ecFjxc+Q2qRcfjHaEnbOueDLZLg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tzK9jFk1eWwxVVVOKlg56d7putBKlEltx+/sXFhULyA=
+			mqOPAh+0yyz1H26DChfwsgrd2wtojBzNc8BKQmQ1vOk=
 			</data>
 		</dict>
 		<key>Headers/bobbleTransactionLogFramework.h</key>
@@ -53,32 +61,46 @@
 			vAaoL9JZ9LgelgjSromyy1VTZoiyXVaCLhkxLKYpP5Q=
 			</data>
 		</dict>
+		<key>Modules/bobbleTransactionLogFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			w1Mo+i+Ebqso7KZHJ2m18N9qBDvEgbYtwhvbmmWmWzQ=
+			</data>
+		</dict>
+		<key>Modules/bobbleTransactionLogFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			w1Mo+i+Ebqso7KZHJ2m18N9qBDvEgbYtwhvbmmWmWzQ=
+			</data>
+		</dict>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sGC6f8DVdnNhS7o1ZvyrpojTnRFw8f9IX9sR1tJNs0A=
+			GbzNcnNVKZeS3akXT56EyQIxIR63O63M3on6qBMwDFg=
 			</data>
 		</dict>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xiW3T0HvY+XM/LCjCYf08+/cC1rwwDa1iVV4upk9WUs=
+			7ruFzkJfMGPxGj4PLiezNlEQ/xo9dTy5TTy4CU82R0M=
 			</data>
 		</dict>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sGC6f8DVdnNhS7o1ZvyrpojTnRFw8f9IX9sR1tJNs0A=
+			GbzNcnNVKZeS3akXT56EyQIxIR63O63M3on6qBMwDFg=
 			</data>
 		</dict>
 		<key>Modules/bobbleTransactionLogFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xiW3T0HvY+XM/LCjCYf08+/cC1rwwDa1iVV4upk9WUs=
+			7ruFzkJfMGPxGj4PLiezNlEQ/xo9dTy5TTy4CU82R0M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

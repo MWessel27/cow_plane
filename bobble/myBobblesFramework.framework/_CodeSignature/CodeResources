@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/myBobblesFramework-Swift.h</key>
 		<data>
-		OjoqAFndIswS+D2I9kchawx2IQQ=
+		qIH//l+KUIYw07OdMQ2AeT75LBA=
 		</data>
 		<key>Headers/myBobblesFramework.h</key>
 		<data>
@@ -14,27 +14,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		YYBaoXc9DJnwN8XRUx06AWi/8+M=
+		5dPw7u5qYYZNrjlBtUY6xMMNOQo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		QwqHpAq03ZyRuYfhXL+UKGYXOhg=
 		</data>
+		<key>Modules/myBobblesFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<data>
+		0f/PGEKfWVhNVC+jHQLvzr6EzBk=
+		</data>
+		<key>Modules/myBobblesFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		0f/PGEKfWVhNVC+jHQLvzr6EzBk=
+		</data>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		T1OICFDQAc9Iql4766E/V68trwo=
+		OmyZIfy0F8WTo90RBgztjBCKC6E=
 		</data>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		NPhQRrHhWvcNdEbHPlFbnknPIJ0=
+		kyR3THvTUWXhV57jbFrJMfEo88k=
 		</data>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		T1OICFDQAc9Iql4766E/V68trwo=
+		OmyZIfy0F8WTo90RBgztjBCKC6E=
 		</data>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		NPhQRrHhWvcNdEbHPlFbnknPIJ0=
+		kyR3THvTUWXhV57jbFrJMfEo88k=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -43,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F6b8InHeIxhZGISk2f/6i3LunRIX6q/GaDBizdJoyBc=
+			GCC1slP3pr74jM2Oo3TN8ZPpIljRkLOAgy9qghWcXb4=
 			</data>
 		</dict>
 		<key>Headers/myBobblesFramework.h</key>
@@ -60,32 +68,46 @@
 			ABK/OaJHANfcp91FasxMEj44X29LsuuTgNU3Gz94Pzk=
 			</data>
 		</dict>
+		<key>Modules/myBobblesFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hf5RU54wWItuqGPjjz+WG8ahrpp5V+F040fQ9XSrih4=
+			</data>
+		</dict>
+		<key>Modules/myBobblesFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hf5RU54wWItuqGPjjz+WG8ahrpp5V+F040fQ9XSrih4=
+			</data>
+		</dict>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			41meXoF5H4IXckz6oLnn2RWuelrGKrZZQm8c9oI1fso=
+			GCtoXO1Gi0qwznXwitoCcXhkShDWkOmJoRGrMyD+CBo=
 			</data>
 		</dict>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s6lOCPa4B33Fdh59Eu3w07wPQcr/rOgQHe6xLz7jXGM=
+			d/PHIsrgPkbk1WnycONZWuZEtS5Qyas26PZm8cwUqT4=
 			</data>
 		</dict>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			41meXoF5H4IXckz6oLnn2RWuelrGKrZZQm8c9oI1fso=
+			GCtoXO1Gi0qwznXwitoCcXhkShDWkOmJoRGrMyD+CBo=
 			</data>
 		</dict>
 		<key>Modules/myBobblesFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s6lOCPa4B33Fdh59Eu3w07wPQcr/rOgQHe6xLz7jXGM=
+			d/PHIsrgPkbk1WnycONZWuZEtS5Qyas26PZm8cwUqT4=
 			</data>
 		</dict>
 	</dict>

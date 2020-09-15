@@ -8,18 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B17A6BC24E8BF1300C1450C /* bobbleUniverse.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */; };
-		7B1937DB24F3D0CC00C56C3A /* bobbleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D524F2A7B500C56C3A /* bobbleFramework.framework */; };
-		7B1937DC24F3D0CC00C56C3A /* bobbleFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D524F2A7B500C56C3A /* bobbleFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7B1937DD24F3D0CD00C56C3A /* BobblePullTokenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D224F2A72900C56C3A /* BobblePullTokenFramework.framework */; };
-		7B1937DE24F3D0CD00C56C3A /* BobblePullTokenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D224F2A72900C56C3A /* BobblePullTokenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7B1937DF24F3D0CF00C56C3A /* bobbleTransactionLogFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D824F2A84800C56C3A /* bobbleTransactionLogFramework.framework */; };
-		7B1937E024F3D0CF00C56C3A /* bobbleTransactionLogFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D824F2A84800C56C3A /* bobbleTransactionLogFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7B1937E124F3D0D100C56C3A /* myBobblesFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937CC24F2A5B500C56C3A /* myBobblesFramework.framework */; };
-		7B1937E224F3D0D100C56C3A /* myBobblesFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937CC24F2A5B500C56C3A /* myBobblesFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7B1937E324F3D0D800C56C3A /* bobbleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D524F2A7B500C56C3A /* bobbleFramework.framework */; };
-		7B1937E524F3D0DA00C56C3A /* BobblePullTokenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D224F2A72900C56C3A /* BobblePullTokenFramework.framework */; };
-		7B1937E724F3D0DB00C56C3A /* bobbleTransactionLogFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937D824F2A84800C56C3A /* bobbleTransactionLogFramework.framework */; };
-		7B1937E924F3D0DD00C56C3A /* myBobblesFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1937CC24F2A5B500C56C3A /* myBobblesFramework.framework */; };
 		7B382D5B24E55BE6009B98E2 /* BobbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */; };
 		7B8BD8ED24EB810000BFED69 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8BD8EC24EB810000BFED69 /* Messages.framework */; };
 		7B8BD8F024EB810000BFED69 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD8EF24EB810000BFED69 /* MessagesViewController.swift */; };
@@ -29,6 +17,14 @@
 		7BBEEAE824ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */; };
 		7BBEEAE924ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */; };
 		7BBEEAEA24ED5C9C007433A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1D3EC24E54A1B00D78348 /* Assets.xcassets */; };
+		7BCBAAC32510679F00CCE05B /* bobbleFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC12510679B00CCE05B /* bobbleFramework.framework */; };
+		7BCBAAC42510679F00CCE05B /* bobbleFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC12510679B00CCE05B /* bobbleFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BCBAAC7251067E400CCE05B /* myBobblesFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC5251067E100CCE05B /* myBobblesFramework.framework */; };
+		7BCBAAC8251067E400CCE05B /* myBobblesFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC5251067E100CCE05B /* myBobblesFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BCBAACB2510681D00CCE05B /* bobbleTransactionLogFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */; };
+		7BCBAACC2510681D00CCE05B /* bobbleTransactionLogFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BCBAACF2510687400CCE05B /* BobblePullTokenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */; };
+		7BCBAAD02510687400CCE05B /* BobblePullTokenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7BD1D3DF24E54A1900D78348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */; };
 		7BD1D3E124E54A1900D78348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */; };
 		7BD1D3E324E54A1900D78348 /* BobbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E224E54A1900D78348 /* BobbleViewController.swift */; };
@@ -69,10 +65,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7B1937DE24F3D0CD00C56C3A /* BobblePullTokenFramework.framework in Embed Frameworks */,
-				7B1937E224F3D0D100C56C3A /* myBobblesFramework.framework in Embed Frameworks */,
-				7B1937E024F3D0CF00C56C3A /* bobbleTransactionLogFramework.framework in Embed Frameworks */,
-				7B1937DC24F3D0CC00C56C3A /* bobbleFramework.framework in Embed Frameworks */,
+				7BCBAAD02510687400CCE05B /* BobblePullTokenFramework.framework in Embed Frameworks */,
+				7BCBAAC8251067E400CCE05B /* myBobblesFramework.framework in Embed Frameworks */,
+				7BCBAAC42510679F00CCE05B /* bobbleFramework.framework in Embed Frameworks */,
+				7BCBAACC2510681D00CCE05B /* bobbleTransactionLogFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,10 +77,6 @@
 
 /* Begin PBXFileReference section */
 		7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = bobbleUniverse.json; path = bobble/bobbleUniverse.json; sourceTree = "<group>"; };
-		7B1937CC24F2A5B500C56C3A /* myBobblesFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myBobblesFramework.framework; sourceTree = "<group>"; };
-		7B1937D224F2A72900C56C3A /* BobblePullTokenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BobblePullTokenFramework.framework; sourceTree = "<group>"; };
-		7B1937D524F2A7B500C56C3A /* bobbleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleFramework.framework; sourceTree = "<group>"; };
-		7B1937D824F2A84800C56C3A /* bobbleTransactionLogFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleTransactionLogFramework.framework; sourceTree = "<group>"; };
 		7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleTableViewCell.swift; sourceTree = "<group>"; };
 		7B8BD8EA24EB810000BFED69 /* bobbleiMessageExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bobbleiMessageExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8BD8EC24EB810000BFED69 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -95,6 +87,10 @@
 		7B8BD8FE24EB834B00BFED69 /* bobble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bobble.entitlements; sourceTree = "<group>"; };
 		7B8BD8FF24EB845200BFED69 /* bobbleiMessageExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bobbleiMessageExtension.entitlements; sourceTree = "<group>"; };
 		7BBEEAE724ED5B3B007433A1 /* BobbleTableViewCellSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleTableViewCellSmall.swift; sourceTree = "<group>"; };
+		7BCBAAC12510679B00CCE05B /* bobbleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleFramework.framework; sourceTree = "<group>"; };
+		7BCBAAC5251067E100CCE05B /* myBobblesFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myBobblesFramework.framework; sourceTree = "<group>"; };
+		7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleTransactionLogFramework.framework; sourceTree = "<group>"; };
+		7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BobblePullTokenFramework.framework; sourceTree = "<group>"; };
 		7BD1D3DB24E54A1900D78348 /* bobble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bobble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +111,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B8BD8ED24EB810000BFED69 /* Messages.framework in Frameworks */,
-				7B1937E924F3D0DD00C56C3A /* myBobblesFramework.framework in Frameworks */,
-				7B1937E524F3D0DA00C56C3A /* BobblePullTokenFramework.framework in Frameworks */,
-				7B1937E724F3D0DB00C56C3A /* bobbleTransactionLogFramework.framework in Frameworks */,
-				7B1937E324F3D0D800C56C3A /* bobbleFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,10 +118,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1937DD24F3D0CD00C56C3A /* BobblePullTokenFramework.framework in Frameworks */,
-				7B1937E124F3D0D100C56C3A /* myBobblesFramework.framework in Frameworks */,
-				7B1937DB24F3D0CC00C56C3A /* bobbleFramework.framework in Frameworks */,
-				7B1937DF24F3D0CF00C56C3A /* bobbleTransactionLogFramework.framework in Frameworks */,
+				7BCBAACF2510687400CCE05B /* BobblePullTokenFramework.framework in Frameworks */,
+				7BCBAAC7251067E400CCE05B /* myBobblesFramework.framework in Frameworks */,
+				7BCBAAC32510679F00CCE05B /* bobbleFramework.framework in Frameworks */,
+				7BCBAACB2510681D00CCE05B /* bobbleTransactionLogFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,10 +152,10 @@
 		7BD1D3D224E54A1900D78348 = {
 			isa = PBXGroup;
 			children = (
-				7B1937D824F2A84800C56C3A /* bobbleTransactionLogFramework.framework */,
-				7B1937D524F2A7B500C56C3A /* bobbleFramework.framework */,
-				7B1937D224F2A72900C56C3A /* BobblePullTokenFramework.framework */,
-				7B1937CC24F2A5B500C56C3A /* myBobblesFramework.framework */,
+				7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */,
+				7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */,
+				7BCBAAC5251067E100CCE05B /* myBobblesFramework.framework */,
+				7BCBAAC12510679B00CCE05B /* bobbleFramework.framework */,
 				7B17A6BB24E8BF1300C1450C /* bobbleUniverse.json */,
 				7BD1D3DD24E54A1900D78348 /* bobble */,
 				7B8BD8EE24EB810000BFED69 /* bobbleiMessageExtension */,

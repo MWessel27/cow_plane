@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BobblePullTokenFramework-Swift.h</key>
 		<data>
-		DFCnC+4mvPCvAisvZixdCOSM7Lc=
+		yS+q7oSdr3AiT0f5GvM3WSXCdhg=
 		</data>
 		<key>Headers/BobblePullTokenFramework.h</key>
 		<data>
@@ -14,23 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		B3ZY1/Rjwe/SJvWTtM4ufw5lF+Y=
+		9G21R7gzuuQK5HN1K9JLnzF5Wo8=
+		</data>
+		<key>Modules/BobblePullTokenFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<data>
+		IbdnJFDz6EKTEDPGOeJQVA3Q+Q4=
+		</data>
+		<key>Modules/BobblePullTokenFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		IbdnJFDz6EKTEDPGOeJQVA3Q+Q4=
 		</data>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		UPK6UiAze9ZU89ApuFpC2UeWqyU=
+		YDpKxUXS4AqV8ACba9EVZCyWdnM=
 		</data>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		pTH/m5UZ0jmGTr0lFxbcTt+LwPE=
+		TCGrgTN7F1ZKYUSY9Jyx9bS/Rkc=
 		</data>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		UPK6UiAze9ZU89ApuFpC2UeWqyU=
+		YDpKxUXS4AqV8ACba9EVZCyWdnM=
 		</data>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		pTH/m5UZ0jmGTr0lFxbcTt+LwPE=
+		TCGrgTN7F1ZKYUSY9Jyx9bS/Rkc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			20PAs7GbeYM7Zl8X5MP6np768rTV2xn7HjacsCs+KHY=
+			JHfM3CVlQCStlsw9qQ0RBwXzxSRrxeJ3WimqAtGDxA0=
 			</data>
 		</dict>
 		<key>Headers/BobblePullTokenFramework.h</key>
@@ -53,32 +61,46 @@
 			v8Cx9+O0IQynACus1rQuK9oXkgW/tG7m8GYRWGeuD6c=
 			</data>
 		</dict>
+		<key>Modules/BobblePullTokenFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xfu1FFypp+tjNkpmnOfWMfuPh0n1Tcq4bkLjw0CyLVU=
+			</data>
+		</dict>
+		<key>Modules/BobblePullTokenFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xfu1FFypp+tjNkpmnOfWMfuPh0n1Tcq4bkLjw0CyLVU=
+			</data>
+		</dict>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IY7AeF6Jen94JmWKHBkXffh3cgPEisawBV8x78diXiU=
+			nfNeZx2rDUXoAExK5emU9oRePxZocNRf2w/kEy+YXH0=
 			</data>
 		</dict>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ww9oDphO3sR4bPEgZD1PR1P+nnBCxTkK/0YK9EkldNY=
+			Q5AgzidqWhwzARat2PDXS0QVMVesZHz20IOWHAoaAno=
 			</data>
 		</dict>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IY7AeF6Jen94JmWKHBkXffh3cgPEisawBV8x78diXiU=
+			nfNeZx2rDUXoAExK5emU9oRePxZocNRf2w/kEy+YXH0=
 			</data>
 		</dict>
 		<key>Modules/BobblePullTokenFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ww9oDphO3sR4bPEgZD1PR1P+nnBCxTkK/0YK9EkldNY=
+			Q5AgzidqWhwzARat2PDXS0QVMVesZHz20IOWHAoaAno=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

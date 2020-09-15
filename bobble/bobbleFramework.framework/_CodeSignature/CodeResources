@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/bobbleFramework-Swift.h</key>
 		<data>
-		5iX7kt7VMcRFI4yoBnEKJ45lZX4=
+		5kKzE42wIYKmw0niAtZkFtkk5+U=
 		</data>
 		<key>Headers/bobbleFramework.h</key>
 		<data>
@@ -14,23 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		J24vLdeRsV4/NVGjq1D6pqJLw8U=
+		lY794aE+yZ8OyDFpTPsdmL7Q9HY=
+		</data>
+		<key>Modules/bobbleFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<data>
+		H/BpN2iLbWq+cQfe0wg5ZyqRxJE=
+		</data>
+		<key>Modules/bobbleFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<data>
+		H/BpN2iLbWq+cQfe0wg5ZyqRxJE=
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		Azhp7iQ9t6ISZtzRafzjvrrKguI=
+		mt/VoHXppqgwAC1FS/sI92TXroE=
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		o14z+QdjLOmZdJ+hngW6JAgCAxI=
+		ltf6sJ7YE9l8n8uYGWq1scNmGvk=
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Azhp7iQ9t6ISZtzRafzjvrrKguI=
+		mt/VoHXppqgwAC1FS/sI92TXroE=
 		</data>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		o14z+QdjLOmZdJ+hngW6JAgCAxI=
+		ltf6sJ7YE9l8n8uYGWq1scNmGvk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UsaLz4RqWz2sNcmhTX5ZdDUDSZkjKRwHLDQbMoSF/8k=
+			hHXpsTP7/aJo1FhufB1Eke2wBf+KnHYk8SS09c3B20A=
 			</data>
 		</dict>
 		<key>Headers/bobbleFramework.h</key>
@@ -53,32 +61,46 @@
 			NmYz7WPGIHTJu2VpHrn1meBLoWoYEdzFa17ddxwsD+c=
 			</data>
 		</dict>
+		<key>Modules/bobbleFramework.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MkVIW/DrDtuWJBQCPvJoTxeHWg2uk2xfz1Voo+IrykM=
+			</data>
+		</dict>
+		<key>Modules/bobbleFramework.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MkVIW/DrDtuWJBQCPvJoTxeHWg2uk2xfz1Voo+IrykM=
+			</data>
+		</dict>
 		<key>Modules/bobbleFramework.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fbDIKKNwYEh7Xf01qjPk3AA89Sl3/R+qmf8OYkOSyQ0=
+			YzH7eWqtIeb6ZhVVFz5qM80Mf2X6CdRrinPA+v6T7lw=
 			</data>
 		</dict>
 		<key>Modules/bobbleFramework.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YXV70CWLNMucMT0FXdUs02oqILZpAjrrnGT0Ed/DnYE=
+			56BUozmbQwN2Ni+lDz+5xT0+TEG978ip+POQUt51N1Y=
 			</data>
 		</dict>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fbDIKKNwYEh7Xf01qjPk3AA89Sl3/R+qmf8OYkOSyQ0=
+			YzH7eWqtIeb6ZhVVFz5qM80Mf2X6CdRrinPA+v6T7lw=
 			</data>
 		</dict>
 		<key>Modules/bobbleFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YXV70CWLNMucMT0FXdUs02oqILZpAjrrnGT0Ed/DnYE=
+			56BUozmbQwN2Ni+lDz+5xT0+TEG978ip+POQUt51N1Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
