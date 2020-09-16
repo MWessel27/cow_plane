@@ -25,6 +25,9 @@
 		7BCBAACC2510681D00CCE05B /* bobbleTransactionLogFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7BCBAACF2510687400CCE05B /* BobblePullTokenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */; };
 		7BCBAAD02510687400CCE05B /* BobblePullTokenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7BCBAAD22510691A00CCE05B /* BobbleShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBAAD12510691A00CCE05B /* BobbleShelfViewController.swift */; };
+		7BCBAAD42510695700CCE05B /* BobbleShelfSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBAAD32510695700CCE05B /* BobbleShelfSwiftUIView.swift */; };
+		7BCBAAD6251069A000CCE05B /* donut.dae in Resources */ = {isa = PBXBuildFile; fileRef = 7BCBAAD5251069A000CCE05B /* donut.dae */; };
 		7BD1D3DF24E54A1900D78348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */; };
 		7BD1D3E124E54A1900D78348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */; };
 		7BD1D3E324E54A1900D78348 /* BobbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3E224E54A1900D78348 /* BobbleViewController.swift */; };
@@ -35,6 +38,7 @@
 		7BD1D3F024E54A1B00D78348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1D3EE24E54A1B00D78348 /* LaunchScreen.storyboard */; };
 		7BD1D3F824E54A9600D78348 /* BobbleShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3F724E54A9600D78348 /* BobbleShareViewController.swift */; };
 		7BD1D3FA24E54D2E00D78348 /* BobbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */; };
+		7BFB14E02510FB0100C0CF19 /* bobble.dae in Resources */ = {isa = PBXBuildFile; fileRef = 7BFB14DF2510FB0100C0CF19 /* bobble.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,9 @@
 		7BCBAAC5251067E100CCE05B /* myBobblesFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myBobblesFramework.framework; sourceTree = "<group>"; };
 		7BCBAAC92510681A00CCE05B /* bobbleTransactionLogFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = bobbleTransactionLogFramework.framework; sourceTree = "<group>"; };
 		7BCBAACD2510684700CCE05B /* BobblePullTokenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BobblePullTokenFramework.framework; sourceTree = "<group>"; };
+		7BCBAAD12510691A00CCE05B /* BobbleShelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleShelfViewController.swift; sourceTree = "<group>"; };
+		7BCBAAD32510695700CCE05B /* BobbleShelfSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleShelfSwiftUIView.swift; sourceTree = "<group>"; };
+		7BCBAAD5251069A000CCE05B /* donut.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = donut.dae; sourceTree = "<group>"; };
 		7BD1D3DB24E54A1900D78348 /* bobble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bobble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +110,7 @@
 		7BD1D3F124E54A1B00D78348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BD1D3F724E54A9600D78348 /* BobbleShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleShareViewController.swift; sourceTree = "<group>"; };
 		7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BobbleDetailViewController.swift; sourceTree = "<group>"; };
+		7BFB14DF2510FB0100C0CF19 /* bobble.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = bobble.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,8 @@
 		7BD1D3DD24E54A1900D78348 /* bobble */ = {
 			isa = PBXGroup;
 			children = (
+				7BFB14DF2510FB0100C0CF19 /* bobble.dae */,
+				7BCBAAD5251069A000CCE05B /* donut.dae */,
 				7B8BD8FE24EB834B00BFED69 /* bobble.entitlements */,
 				7BD1D3DE24E54A1900D78348 /* AppDelegate.swift */,
 				7BD1D3E024E54A1900D78348 /* SceneDelegate.swift */,
@@ -184,6 +194,8 @@
 				7BD1D3F724E54A9600D78348 /* BobbleShareViewController.swift */,
 				7BD1D3F924E54D2E00D78348 /* BobbleDetailViewController.swift */,
 				7BD1D3E624E54A1900D78348 /* Main.storyboard */,
+				7BCBAAD12510691A00CCE05B /* BobbleShelfViewController.swift */,
+				7BCBAAD32510695700CCE05B /* BobbleShelfSwiftUIView.swift */,
 				7B382D5A24E55BE6009B98E2 /* BobbleTableViewCell.swift */,
 				7BD1D3EC24E54A1B00D78348 /* Assets.xcassets */,
 				7BD1D3EE24E54A1B00D78348 /* LaunchScreen.storyboard */,
@@ -287,6 +299,8 @@
 			files = (
 				7BD1D3F024E54A1B00D78348 /* LaunchScreen.storyboard in Resources */,
 				7BD1D3ED24E54A1B00D78348 /* Assets.xcassets in Resources */,
+				7BFB14E02510FB0100C0CF19 /* bobble.dae in Resources */,
+				7BCBAAD6251069A000CCE05B /* donut.dae in Resources */,
 				7B17A6BC24E8BF1300C1450C /* bobbleUniverse.json in Resources */,
 				7BD1D3E824E54A1900D78348 /* Main.storyboard in Resources */,
 			);
@@ -311,6 +325,8 @@
 				7BBEEAE824ED5B3B007433A1 /* BobbleTableViewCellSmall.swift in Sources */,
 				7BD1D3E524E54A1900D78348 /* BobblePullViewController.swift in Sources */,
 				7BD1D3F824E54A9600D78348 /* BobbleShareViewController.swift in Sources */,
+				7BCBAAD42510695700CCE05B /* BobbleShelfSwiftUIView.swift in Sources */,
+				7BCBAAD22510691A00CCE05B /* BobbleShelfViewController.swift in Sources */,
 				7BD1D3FA24E54D2E00D78348 /* BobbleDetailViewController.swift in Sources */,
 				7BD1D3EB24E54A1900D78348 /* bobble.xcdatamodeld in Sources */,
 				7BD1D3E324E54A1900D78348 /* BobbleViewController.swift in Sources */,
